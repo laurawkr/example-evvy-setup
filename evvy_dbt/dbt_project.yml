@@ -1,0 +1,26 @@
+name: 'evvy_dbt'
+version: '1.0.0'
+profile: 'evvy_dbt'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  evvy_dbt:
+    example:
+      +materialized: view
+
+sources:
+  - name: evvy_db
+    database: EVVY_DB
+    schema: TEST
+    tables:
+      - name: CART_EVENT

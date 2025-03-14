@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: evvy_db
+    database: EVVY_DB
+    schema: TEST
+    tables:
+      - name: CART_EVENT
+
